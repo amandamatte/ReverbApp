@@ -24,15 +24,33 @@ struct LoginPageComponents: View {
                 
             }
             
-             Button {
-                //MusicPreference.toggle() //criar a classe Music
-            }  label: {
-                Text("Login with Apple")
-                    .foregroundColor(.white)
-                    .padding()
-                    .cornerRadius(34)
+            VStack(spacing: 15) {
+                Button {
+                }  label: {
+                    Text("Login with Apple")
+                        .foregroundColor(.white)
+                        .frame(maxWidth: .infinity, alignment: .center)
+                        .padding(.vertical, 16)
+                        .background(
+                            LinearGradient(colors: [.gradientLinear1, .gradientLinear2], startPoint: .leading, endPoint: .bottom), in: .capsule)
+                }
+                .padding(.horizontal, 20)
+                
+                Button {
+                }  label: {
+                    Text("Login with Apple")
+                        .foregroundColor(.orange)
+                        .frame(maxWidth: .infinity, alignment: .center)
+                        .padding(.vertical, 16)
+                        .background(.background)
+                        .overlay {
+                            RoundedRectangle(cornerRadius: 25)
+                                .stroke(LinearGradient(colors: [.gradientLinear1, .gradientLinear2], startPoint: .leading, endPoint: .bottom), lineWidth: 2)
+                        }
+                }
+                .padding(.horizontal, 20)
             }
-            .buttonStyle(.borderedProminent)
+      
         }
         
     }
