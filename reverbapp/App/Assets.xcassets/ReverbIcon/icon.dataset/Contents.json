@@ -1,8 +1,9 @@
 {
   "data" : [
     {
-      "filename" : "icon.json",
-      "idiom" : "universal"
+      "filename" : "project.pbxproj",
+      "idiom" : "universal",
+      "universal-type-identifier" : "com.apple.xcode.projectdata"
     }
   ],
   "info" : {
