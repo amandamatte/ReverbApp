@@ -11,10 +11,16 @@ struct LoginPage: View {
     var body: some View {
         
         ZStack {
-            LinearGradient(colors: [.gradientLinear3, .gradientLinear4], startPoint: .leading, endPoint: .bottom)
-                .ignoresSafeArea()
-            
-            
+            LinearGradient(
+                stops: [
+                    Gradient.Stop(color: Color("GradientLinear3").opacity(0.98), location: 0.0),
+                    Gradient.Stop(color: Color("GradientLinear4"), location: 0.56)
+                ],
+                startPoint: .top,
+                endPoint: .bottom
+            )
+            .ignoresSafeArea()
+
             VStack {
                 
                 VStack(spacing: 18){
@@ -52,10 +58,9 @@ struct LoginPage: View {
                     Button {
                     }  label: {
                         Text("Continue with Apple")
-                            .foregroundColor(.orange)
+                            .foregroundColor(.gradientLinear2)
                             .frame(maxWidth: .infinity, alignment: .center)
                             .padding(.vertical, 16)
-                            .background(.background)
                             .overlay {
                                 RoundedRectangle(cornerRadius: 25)
                                     .stroke(LinearGradient(colors: [.gradientLinear1, .gradientLinear2], startPoint: .leading, endPoint: .bottom), lineWidth: 2)
