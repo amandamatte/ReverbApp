@@ -8,17 +8,67 @@
 import SwiftUI
 
 struct LoginPage: View {
-    
-    
-    
-    
-    
-    
-    
     var body: some View {
-
+        
+        ZStack {
+            LinearGradient(colors: [.gradientLinear3, .gradientLinear4], startPoint: .leading, endPoint: .bottom)
+                .ignoresSafeArea()
+            
+            
+            VStack {
+                
+                VStack(spacing: 18){
+                    Image("Reverb")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 235, height: 235)
+                }
+                
+                VStack(spacing: 132){
+                    VStack(spacing: 22){
+                        Image("Icon")
+                        VStack(spacing: 16) {
+                            Text("Welcome to ")
+                                .foregroundColor(.white)
+                                .fontWeight(.bold)
+                                .font(Font.system(size: 24))
+                            
+                            + Text("Reverb")
+                                .fontWeight(.bold)
+                                .font(Font.system(size: 24))
+                                .foregroundStyle(LinearGradient(colors: [.gradientLinear1, .gradientLinear2], startPoint: .leading, endPoint: .bottom))
+                            
+                            Text("Explore songs, albums and artists. See what people are reviewing and share your music taste.")
+                                .multilineTextAlignment(.center)
+                                .fontWeight(.regular)
+                                .font(Font.system(size: 14))
+                                .foregroundColor(.white)
+                            
+                        }
+                        
+                    }
+                    
+                    
+                    Button {
+                    }  label: {
+                        Text("Continue with Apple")
+                            .foregroundColor(.orange)
+                            .frame(maxWidth: .infinity, alignment: .center)
+                            .padding(.vertical, 16)
+                            .background(.background)
+                            .overlay {
+                                RoundedRectangle(cornerRadius: 25)
+                                    .stroke(LinearGradient(colors: [.gradientLinear1, .gradientLinear2], startPoint: .leading, endPoint: .bottom), lineWidth: 2)
+                            }
+                    }
+                    .padding(.horizontal, 20)
+                }
+                
+            }
+        }
     }
 }
+
 
 #Preview {
     LoginPage()

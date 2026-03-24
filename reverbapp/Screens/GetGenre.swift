@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct LoginPageComponents: View {
+struct GetGenre: View {
     var body: some View {
         
             VStack(spacing: 150){
@@ -52,12 +52,10 @@ struct LoginPageComponents: View {
                 }
                 .padding(.horizontal, 20)
             }
-    
         }
-        
     }
 }
 
 #Preview {
-    LoginPageComponents()
+    GetGenre()
 }
