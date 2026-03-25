@@ -141,7 +141,7 @@ struct GenrePage: View {
                         }
                     }
                     .padding(.horizontal)
-                    .padding(.bottom, 10)
+                    .padding(.bottom, 30)
                 }
             }
         }
