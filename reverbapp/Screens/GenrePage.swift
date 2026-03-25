@@ -20,12 +20,6 @@ struct GenrePage: View {
                 "J-Pop", "Christmas", "Afrohouse", "Death metal",
                 "Children's", "Hardstyle", "2000s pop", "Boombap"
     ]
-    
-    let primaryAccentGradient = LinearGradient(
-            colors: [Color(red: 0.9, green: 0.3, blue: 0.4), Color(red: 0.95, green: 0.6, blue: 0.4)],
-            startPoint: .leading,
-            endPoint: .trailing
-        )
         
         // Configuração da grade nativa do SwiftUI
         let columns = [
@@ -49,7 +43,7 @@ struct GenrePage: View {
                     // Barra Superior
                     HStack(spacing: 8) {
                         Capsule()
-                            .fill(primaryAccentGradient)
+                            .fill(LinearGradient(colors: [.gradientLinear1, .gradientLinear2], startPoint: .leading, endPoint: .bottom))
                             .frame(width: 40, height: 4)
                         Capsule()
                             .fill(Color.gray.opacity(0.4))
@@ -64,13 +58,14 @@ struct GenrePage: View {
                     HStack {
                         VStack(alignment: .leading, spacing: 6) {
                             Text("Select your favorite genres")
-                                .font(.title2)
+                                .font(Font.system(size: 16))
                                 .fontWeight(.bold)
                                 .foregroundColor(.white)
                             
                             Text("Select at least 5 items")
-                                .font(.subheadline)
-                                .foregroundColor(.gray)
+                                .fontWeight(.bold)
+                                .font(Font.system(size: 12))
+                                .foregroundColor(.white.opacity(0.8))
                         }
                         
                         Spacer()
@@ -81,7 +76,7 @@ struct GenrePage: View {
                             
                             Circle()
                                 .trim(from: 0, to: min(CGFloat(selectedGenres.count) / 5.0, 1.0))
-                                .stroke(primaryAccentGradient, style: StrokeStyle(lineWidth: 4, lineCap: .round))
+                                .stroke(LinearGradient(colors: [.gradientLinear1, .gradientLinear2], startPoint: .leading, endPoint: .bottom), lineWidth: 2)
                                 .rotationEffect(.degrees(-90))
                                 .animation(.easeInOut, value: selectedGenres.count)
                             
@@ -126,27 +121,26 @@ struct GenrePage: View {
                             print("Next tapped")
                         }) {
                             Text("Next")
-                                .font(.headline)
                                 .foregroundColor(.white)
                                 .frame(maxWidth: .infinity)
                                 .padding(.vertical, 16)
-                                .background(primaryAccentGradient)
-                                .clipShape(Capsule())
+                                .background(
+                                    LinearGradient(colors: [.gradientLinear1, .gradientLinear2], startPoint: .leading, endPoint: .bottom), in: .capsule)
                         }
 
                         Button(action: {
                             print("Skip tapped")
                         }) {
                             Text("Skip")
-                                .font(.headline)
                                 .foregroundColor(Color(red: 0.95, green: 0.6, blue: 0.4))
                                 .frame(maxWidth: .infinity)
                                 .padding(.vertical, 16)
                                 .background(Color.clear)
                                 .clipShape(Capsule())
-                                .overlay(
-                                    Capsule().stroke(primaryAccentGradient, lineWidth: 1.5)
-                                )
+                                .overlay {
+                                    RoundedRectangle(cornerRadius: 25)
+                                        .stroke(LinearGradient(colors: [.gradientLinear1, .gradientLinear2], startPoint: .leading, endPoint: .bottom), lineWidth: 2)
+                                }
                         }
                     }
                     .padding(.horizontal)
