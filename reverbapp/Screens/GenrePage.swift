@@ -9,7 +9,7 @@ import SwiftUI
 
 struct GenrePage: View {
     
-    @State private var selectedGenres: Set<String> = ["Samba", "Pop"]
+    @State private var selectedGenres: Set<String> = []
     
     let allGenres = [
         "Samba", "Pop", "Indie Rock", "Gospel", "Country",
