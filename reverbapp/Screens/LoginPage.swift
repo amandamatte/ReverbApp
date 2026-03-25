@@ -56,6 +56,7 @@ struct LoginPage: View {
                     
                     
                     Button {
+                        GenrePage()
                     }  label: {
                         Text("Continue with Apple")
                             .foregroundColor(.gradientLinear2)

@@ -1,0 +1,161 @@
+//
+//  GenrePage.swift
+//  reverbapp
+//
+//  Created by Aluno-09 on 25/03/26.
+//
+
+import SwiftUI
+
+struct GenrePage: View {
+    
+    @State private var selectedGenres: Set<String> = ["Samba", "Pop"]
+    
+    let allGenres = [
+        "Samba", "Pop", "Indie Rock", "Gospel", "Country",
+                "J-Rock", "Soundtracks", "Classical", "Synth-pop",
+                "EDM", "Metal", "Hip-hop", "R&B", "New Wave", "Blues",
+                "Reggae", "Jazz Fusion", "Disco", "Folk", "K-Pop",
+                "Funk", "Soul", "Western", "Punk", "Vaporwave",
+                "J-Pop", "Christmas", "Afrohouse", "Death metal",
+                "Children's", "Hardstyle", "2000s pop", "Boombap"
+    ]
+    
+    let primaryAccentGradient = LinearGradient(
+            colors: [Color(red: 0.9, green: 0.3, blue: 0.4), Color(red: 0.95, green: 0.6, blue: 0.4)],
+            startPoint: .leading,
+            endPoint: .trailing
+        )
+        
+        // Configuração da grade nativa do SwiftUI
+        let columns = [
+            GridItem(.adaptive(minimum: 100), spacing: 10)
+        ]
+
+        var body: some View {
+            ZStack {
+                LinearGradient(
+                    stops: [
+                        Gradient.Stop(color: Color("GradientLinear3").opacity(0.98), location: 0.0),
+                        Gradient.Stop(color: Color("GradientLinear4"), location: 0.56)
+                    ],
+                    startPoint: .top,
+                    endPoint: .bottom
+                )
+                .ignoresSafeArea()
+                
+                VStack(spacing: 24) {
+                    
+                    // Barra Superior
+                    HStack(spacing: 8) {
+                        Capsule()
+                            .fill(primaryAccentGradient)
+                            .frame(width: 40, height: 4)
+                        Capsule()
+                            .fill(Color.gray.opacity(0.4))
+                            .frame(width: 40, height: 4)
+                        Capsule()
+                            .fill(Color.gray.opacity(0.4))
+                            .frame(width: 40, height: 4)
+                    }
+                    .padding(.top, 10)
+
+                    // Textos e Contador
+                    HStack {
+                        VStack(alignment: .leading, spacing: 6) {
+                            Text("Select your favorite genres")
+                                .font(.title2)
+                                .fontWeight(.bold)
+                                .foregroundColor(.white)
+                            
+                            Text("Select at least 5 items")
+                                .font(.subheadline)
+                                .foregroundColor(.gray)
+                        }
+                        
+                        Spacer()
+
+                        ZStack {
+                            Circle()
+                                .stroke(Color.gray.opacity(0.3), lineWidth: 4)
+                            
+                            Circle()
+                                .trim(from: 0, to: min(CGFloat(selectedGenres.count) / 5.0, 1.0))
+                                .stroke(primaryAccentGradient, style: StrokeStyle(lineWidth: 4, lineCap: .round))
+                                .rotationEffect(.degrees(-90))
+                                .animation(.easeInOut, value: selectedGenres.count)
+                            
+                            Text("\(selectedGenres.count)")
+                                .font(.headline)
+                                .foregroundColor(.white)
+                        }
+                        .frame(width: 44, height: 44)
+                    }
+                    .padding(.horizontal)
+
+                    // Grade de Gêneros usando LazyVGrid
+                    ScrollView(showsIndicators: false) {
+                        LazyVGrid(columns: columns, spacing: 12) {
+                            ForEach(allGenres, id: \.self) { genre in
+                                let isSelected = selectedGenres.contains(genre)
+                                
+                                Text(genre)
+                                    .font(.system(size: 14, weight: .semibold))
+                                    .frame(maxWidth: .infinity)
+                                    .padding(.vertical, 10)
+                                    .background(isSelected ? Color.white : Color.white.opacity(0.15))
+                                    .foregroundColor(isSelected ? Color.black : Color.gray)
+                                    .clipShape(Capsule())
+                                    .onTapGesture {
+                                        withAnimation(.spring(response: 0.3, dampingFraction: 0.7)) {
+                                            if isSelected {
+                                                selectedGenres.remove(genre)
+                                            } else {
+                                                selectedGenres.insert(genre)
+                                            }
+                                        }
+                                    }
+                            }
+                        }
+                        .padding(.horizontal)
+                    }
+
+                    // Botões Inferiores
+                    VStack(spacing: 16) {
+                        Button(action: {
+                            print("Next tapped")
+                        }) {
+                            Text("Next")
+                                .font(.headline)
+                                .foregroundColor(.white)
+                                .frame(maxWidth: .infinity)
+                                .padding(.vertical, 16)
+                                .background(primaryAccentGradient)
+                                .clipShape(Capsule())
+                        }
+
+                        Button(action: {
+                            print("Skip tapped")
+                        }) {
+                            Text("Skip")
+                                .font(.headline)
+                                .foregroundColor(Color(red: 0.95, green: 0.6, blue: 0.4))
+                                .frame(maxWidth: .infinity)
+                                .padding(.vertical, 16)
+                                .background(Color.clear)
+                                .clipShape(Capsule())
+                                .overlay(
+                                    Capsule().stroke(primaryAccentGradient, lineWidth: 1.5)
+                                )
+                        }
+                    }
+                    .padding(.horizontal)
+                    .padding(.bottom, 10)
+                }
+            }
+        }
+    }
+
+    #Preview {
+        GenrePage()
+    }
