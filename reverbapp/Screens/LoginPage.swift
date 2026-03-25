@@ -54,10 +54,9 @@ struct LoginPage: View {
                         
                     }
                     
-                    
-                    Button {
+                    NavigationLink {
                         GenrePage()
-                    }  label: {
+                    } label: {
                         Text("Continue with Apple")
                             .foregroundColor(.gradientLinear2)
                             .frame(maxWidth: .infinity, alignment: .center)

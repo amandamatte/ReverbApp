@@ -11,7 +11,9 @@ import SwiftUI
 struct reverbappApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            NavigationStack {
+                LoginPage()
+            }
         }
     }
 }
