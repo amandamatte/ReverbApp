@@ -48,9 +48,6 @@ struct GenrePage: View {
                         Capsule()
                             .fill(Color.gray.opacity(0.4))
                             .frame(width: 40, height: 4)
-                        Capsule()
-                            .fill(Color.gray.opacity(0.4))
-                            .frame(width: 40, height: 4)
                     }
                     .padding(.top, 10)
 

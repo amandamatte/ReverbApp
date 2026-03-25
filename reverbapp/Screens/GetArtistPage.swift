@@ -43,13 +43,10 @@ struct GetArtistPage: View {
                     // Barra Superior
                     HStack(spacing: 8) {
                         Capsule()
+                            .fill(Color.white)
+                            .frame(width: 40, height: 4)
+                        Capsule()
                             .fill(LinearGradient(colors: [.gradientLinear1, .gradientLinear2], startPoint: .leading, endPoint: .bottom))
-                            .frame(width: 40, height: 4)
-                        Capsule()
-                            .fill(Color.gray.opacity(0.4))
-                            .frame(width: 40, height: 4)
-                        Capsule()
-                            .fill(Color.gray.opacity(0.4))
                             .frame(width: 40, height: 4)
                     }
                     .padding(.top, 10)
