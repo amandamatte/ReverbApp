@@ -1,32 +1,24 @@
-//
-//  GenrePage.swift
-//  reverbapp
-//
-//  Created by Aluno-09 on 25/03/26.
-//
-
 import SwiftUI
 
 struct GenrePage: View {
-    
     @State private var selectedGenres: Set<String> = []
     
     let allGenres = [
         "Samba", "Pop", "Indie Rock", "Gospel", "Country",
-                "J-Rock", "Soundtracks", "Classical", "Synth-pop",
-                "EDM", "Metal", "Hip-hop", "R&B", "New Wave", "Blues",
-                "Reggae", "Jazz Fusion", "Disco", "Folk", "K-Pop",
-                "Funk", "Soul", "Western", "Punk", "Vaporwave",
-                "J-Pop", "Christmas", "Afrohouse", "Death metal",
-                "Children's", "Hardstyle", "2000s pop", "Boombap"
+        "J-Rock", "Soundtracks", "Classical", "Synth-pop",
+        "EDM", "Metal", "Hip-hop", "R&B", "New Wave", "Blues",
+        "Reggae", "Jazz Fusion", "Disco", "Folk", "K-Pop",
+        "Funk", "Soul", "Western", "Punk", "Vaporwave",
+        "J-Pop", "Christmas", "Afrohouse", "Death metal",
+        "Children's", "Hardstyle", "2000s pop", "Boombap"
     ]
         
-        // Configuração da grade nativa do SwiftUI
-        let columns = [
-            GridItem(.adaptive(minimum: 100), spacing: 10)
-        ]
+    let columns = [
+        GridItem(.adaptive(minimum: 100), spacing: 10)
+    ]
 
-        var body: some View {
+    var body: some View {
+        NavigationStack {
             ZStack {
                 LinearGradient(
                     stops: [
@@ -39,8 +31,6 @@ struct GenrePage: View {
                 .ignoresSafeArea()
                 
                 VStack(spacing: 24) {
-                    
-                    // Barra Superior
                     HStack(spacing: 8) {
                         Capsule()
                             .fill(LinearGradient(colors: [.gradientLinear1, .gradientLinear2], startPoint: .leading, endPoint: .bottom))
@@ -51,7 +41,6 @@ struct GenrePage: View {
                     }
                     .padding(.top, 10)
 
-                    // Textos e Contador
                     HStack {
                         VStack(alignment: .leading, spacing: 6) {
                             Text("Select your favorite genres")
@@ -85,7 +74,6 @@ struct GenrePage: View {
                     }
                     .padding(.horizontal)
 
-                    // Grade de Gêneros usando LazyVGrid
                     ScrollView(showsIndicators: false) {
                         LazyVGrid(columns: columns, spacing: 12) {
                             ForEach(allGenres, id: \.self) { genre in
@@ -112,22 +100,19 @@ struct GenrePage: View {
                         .padding(.horizontal)
                     }
 
-                    // Botões Inferiores
                     VStack(spacing: 16) {
-                        Button(action: {
-                            print("Next tapped")
-                        }) {
+                        NavigationLink(destination: GetArtistPage()) {
                             Text("Next")
                                 .foregroundColor(.white)
                                 .frame(maxWidth: .infinity)
                                 .padding(.vertical, 16)
                                 .background(
                                     LinearGradient(colors: [.gradientLinear1, .gradientLinear2], startPoint: .leading, endPoint: .bottom), in: .capsule)
+                                .opacity(selectedGenres.count < 5 ? 0.5 : 1.0)
                         }
+                        .disabled(selectedGenres.count < 5)
 
-                        Button(action: {
-                            print("Skip tapped")
-                        }) {
+                        NavigationLink(destination: GetArtistPage()) {
                             Text("Skip")
                                 .foregroundColor(Color(red: 0.95, green: 0.6, blue: 0.4))
                                 .frame(maxWidth: .infinity)
@@ -144,9 +129,11 @@ struct GenrePage: View {
                     .padding(.bottom, 30)
                 }
             }
+            .toolbar(.hidden, for: .navigationBar)
         }
     }
+}
 
-    #Preview {
-        GenrePage()
-    }
+#Preview {
+    GenrePage()
+}
