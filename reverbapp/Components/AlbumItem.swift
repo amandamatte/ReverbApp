@@ -35,13 +35,16 @@ struct AlbumItem: View {
             VStack(spacing: 4) {
                 Text(album.title)
                     .font(.subheadline)
-                    .fontWeight(.bold)
+                    .fontWeight(.semibold)
                     .foregroundColor(.white)
+                    .font(Font.system(size: 12))
                     .lineLimit(1)
                 
                 Text(album.artist)
                     .font(.caption)
-                    .foregroundColor(.gray)
+                    .fontWeight(.regular)
+                    .foregroundColor(.white.opacity(0.6))
+                    .font(Font.system(size: 11))
                     .lineLimit(1)
             }
         }
