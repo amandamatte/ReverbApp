@@ -12,3 +12,4 @@ struct AlbumSection: Identifiable {
     let title: Text
     let albums: [Album]
 }
+
