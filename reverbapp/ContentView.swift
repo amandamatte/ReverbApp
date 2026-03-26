@@ -1,25 +1,20 @@
-//
-//  ContentView.swift
-//  reverbapp
-//
-//  Created by Aluno-02 on 16/03/26.
-//
-
 import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        ZStack(alignment: .bottom) {
+            // Chama a tela principal com o nome atualizado
+            Home()
+            
+            // Coloca a barra flutuante por cima
+            FloatingTabBar()
         }
-        .padding()
+        .preferredColorScheme(.dark)
     }
 }
 
-#Preview {
-    ContentView()
+struct ContentView_Previews: PreviewProvider {
+    static var previews: some View {
+        ContentView()
+    }
 }
-// aaaa
