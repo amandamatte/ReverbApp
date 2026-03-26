@@ -92,4 +92,4 @@ struct Profile_Previews: PreviewProvider {
         Profile()
     }
 }
-
+// fix scroll - only sections should move, not the profile header

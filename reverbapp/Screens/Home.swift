@@ -64,8 +64,7 @@ struct Home: View {
             
             ScrollView(.vertical, showsIndicators: false) {
                 VStack(spacing: 30) {
-                    
-            
+
                     Button(action: {
                     
                     }) {
@@ -101,3 +100,4 @@ struct Home_Previews: PreviewProvider {
         Home()
     }
 }
+// fix scroll - My activity shouldn't move
