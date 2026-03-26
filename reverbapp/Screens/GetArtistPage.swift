@@ -16,7 +16,7 @@ struct ArtistComponent: View {
             Image(imageName)
             Spacer()
             Text(name)
-                .foregroundStyle(selectedArtists ? .gradientLinear2 : .white) 
+                .foregroundStyle(selectedArtists ? .gradientLinear2 : .white)
                 .fontWeight(.medium)
                 .font(Font.system(size: 9.17))
         }
@@ -44,7 +44,6 @@ struct GetArtistPage: View {
     ]
     
     var body: some View {
- 
         NavigationStack {
             ZStack {
                 LinearGradient(
@@ -59,7 +58,6 @@ struct GetArtistPage: View {
                 
                 VStack(spacing: 24) {
                     
-                
                     HStack(spacing: 8) {
                         Capsule()
                             .fill(Color.white)
@@ -70,7 +68,6 @@ struct GetArtistPage: View {
                     }
                     .padding(.top, 10)
                     
-                
                     HStack {
                         VStack(alignment: .leading, spacing: 6) {
                             Text("What artists do you like?")
@@ -92,7 +89,7 @@ struct GetArtistPage: View {
                             
                             Circle()
                                 .trim(from: 0, to: min(CGFloat(selectedArtists.count) / 5.0, 1.0))
-                                .stroke(LinearGradient(colors: [.gradientLinear1, .gradientLinear2], startPoint: .leading, endPoint: .bottom), lineWidth: 2) // Sua cor original
+                                .stroke(LinearGradient(colors: [.gradientLinear1, .gradientLinear2], startPoint: .leading, endPoint: .bottom), lineWidth: 2)
                                 .rotationEffect(.degrees(-90))
                                 .animation(.easeInOut, value: selectedArtists.count)
                             
@@ -123,7 +120,7 @@ struct GetArtistPage: View {
                     }
                     
                     VStack(spacing: 16) {
-                    
+                        
                         NavigationLink(destination: TabBar().navigationBarBackButtonHidden(true)) {
                             Text("Next")
                                 .foregroundColor(.white)
@@ -134,11 +131,10 @@ struct GetArtistPage: View {
                                 )
                         }
                         
-                        Button(action: {
-                            print("Skip tapped")
-                        }) {
+                        // Substituí o Button por um NavigationLink aqui
+                        NavigationLink(destination: TabBar().navigationBarBackButtonHidden(true)) {
                             Text("Skip")
-                                .foregroundColor(Color(red: 0.95, green: 0.6, blue: 0.4)) // Sua cor original
+                                .foregroundColor(Color(red: 0.95, green: 0.6, blue: 0.4))
                                 .frame(maxWidth: .infinity)
                                 .padding(.vertical, 16)
                                 .background(Color.clear)
