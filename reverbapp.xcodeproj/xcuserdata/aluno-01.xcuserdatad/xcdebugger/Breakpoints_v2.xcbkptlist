@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "114EB65F-80C2-4176-9B89-D8C48D59495A"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "CE5FED4E-51CD-4454-97A3-2A44FC458FA4"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "reverbapp/App/TabBar.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "11"
+            endingLineNumber = "11"
+            landmarkName = "body"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "CE5FED4E-51CD-4454-97A3-2A44FC458FA4 - 164b18b23fa25d48"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; &lt;&lt;opaque return type of static SwiftUI.TabContentBuilder.buildBlock&lt;&#x3c4;_0_0, &#x3c4;_0_1, &#x3c4;_0_2 where &#x3c4;_0_0 == &#x3c4;_1_0.TabValue, &#x3c4;_1_0: SwiftUI.TabContent, &#x3c4;_1_1: SwiftUI.TabContent, &#x3c4;_1_2: SwiftUI.TabContent, &#x3c4;_1_0.TabValue == &#x3c4;_1_1.TabValue, &#x3c4;_1_1.TabValue == &#x3c4;_1_2.TabValue&gt;(&#x3c4;_1_0, &#x3c4;_1_1, &#x3c4;_1_2) -&gt; some&gt;&gt;.0 in reverbapp.TabBar.body.getter : some"
+                  moduleName = "reverbapp.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/aluno-01/Documents/reverbapp/reverbapp/App/TabBar.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "11"
+                  endingLineNumber = "11">
+               </Location>
+               <Location
+                  uuid = "CE5FED4E-51CD-4454-97A3-2A44FC458FA4 - 5f55d5233b4bc9b3"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 () -&gt; SwiftUI.NavigationStack&lt;SwiftUI.NavigationPath, SwiftUI.EmptyView&gt; in closure #1 () -&gt; &lt;&lt;opaque return type of static SwiftUI.TabContentBuilder.buildBlock&lt;&#x3c4;_0_0, &#x3c4;_0_1, &#x3c4;_0_2 where &#x3c4;_0_0 == &#x3c4;_1_0.TabValue, &#x3c4;_1_0: SwiftUI.TabContent, &#x3c4;_1_1: SwiftUI.TabContent, &#x3c4;_1_2: SwiftUI.TabContent, &#x3c4;_1_0.TabValue == &#x3c4;_1_1.TabValue, &#x3c4;_1_1.TabValue == &#x3c4;_1_2.TabValue&gt;(&#x3c4;_1_0, &#x3c4;_1_1, &#x3c4;_1_2) -&gt; some&gt;&gt;.0 in reverbapp.TabBar.body.getter : some"
+                  moduleName = "reverbapp.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/aluno-01/Documents/reverbapp/reverbapp/App/TabBar.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

@@ -124,7 +124,7 @@ struct GetArtistPage: View {
                     
                     VStack(spacing: 16) {
                     
-                        NavigationLink(destination: ContentView().navigationBarBackButtonHidden(true)) {
+                        NavigationLink(destination: TabBar().navigationBarBackButtonHidden(true)) {
                             Text("Next")
                                 .foregroundColor(.white)
                                 .frame(maxWidth: .infinity)

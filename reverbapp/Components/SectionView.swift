@@ -5,7 +5,7 @@ struct SectionView: View {
     
     var body: some View {
         VStack(alignment: .leading, spacing: 16) {
-            // Cabeçalho da Seção
+            // Cabeçalho da Sessão
             HStack {
                 section.title
                     .font(.title3)

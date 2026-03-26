@@ -3,27 +3,48 @@ import SwiftUI
 struct Home: View {
     let sections: [AlbumSection] = [
         AlbumSection(
-            title: Text("Reverb ").foregroundColor(.red).bold() + Text("recommends").foregroundColor(.white).bold(),
+            title: Text("Reverb ")
+                .foregroundStyle(LinearGradient(colors: [.gradientLinear1, .gradientLinear2], startPoint: .leading, endPoint: .bottom))
+                .fontWeight(.semibold)
+                .font(Font.system(size: 18))
+            + Text("recommends")
+                .fontWeight(.semibold)
+                .font(Font.system(size: 18))
+                .foregroundStyle(.white),
             albums: [
-                Album(title: "R.A.M", artist: "Daft Punk", imageName: "ram"),
-                Album(title: "Igor", artist: "Tyler, the Creator", imageName: "igor"),
-                Album(title: "Melophobia", artist: "Cage the Elephant", imageName: "melophobia")
+                Album(title: "R.A.M", artist: "Daft Punk", imageName: "DaftPunk"),
+                Album(title: "Igor", artist: "Tyler, the Creator", imageName: "Tyler"),
+                Album(title: "Melophobia", artist: "Cage the Elephant", imageName: "Cage")
             ]
         ),
         AlbumSection(
-            title: Text("Since you like ").foregroundColor(.gray).bold() + Text("A$AP Rocky").foregroundColor(.orange).bold(),
+            title: Text("Since you like ")
+                .foregroundStyle(.white)
+                .fontWeight(.semibold)
+                .font(Font.system(size: 18))
+            + Text("A$AP Rocky")
+                .foregroundStyle(LinearGradient(colors: [.gradientLinear1, .gradientLinear2], startPoint: .leading, endPoint: .bottom))
+                .fontWeight(.semibold)
+                .font(Font.system(size: 18)),
             albums: [
-                Album(title: "Astroworld", artist: "Travis Scott", imageName: "astroworld"),
-                Album(title: "Scorpion", artist: "Drake", imageName: "scorpion"),
-                Album(title: "I am > I was", artist: "21 Savage", imageName: "iam")
+                Album(title: "Astroworld", artist: "Travis Scott", imageName: "Travis"),
+                Album(title: "Scorpion", artist: "Drake", imageName: "Drake"),
+                Album(title: "I am > I was", artist: "21 Savage", imageName: "Savage")
             ]
         ),
         AlbumSection(
-            title: Text("Since you like ").foregroundColor(.gray).bold() + Text("The Strokes").foregroundColor(.red).bold(),
+            title: Text("Since you like ")
+                .foregroundStyle(.white)
+                .fontWeight(.semibold)
+                .font(Font.system(size: 18))
+            + Text("The Strokes")
+                .foregroundStyle(LinearGradient(colors: [.gradientLinear1, .gradientLinear2], startPoint: .leading, endPoint: .bottom))
+                .fontWeight(.semibold)
+                .font(Font.system(size: 18)),
             albums: [
-                Album(title: "test", artist: "Radiohead", imageName: ""),
-                Album(title: "", artist: "Tame Impala", imageName: "currents"),
-                Album(title: "", artist: "Weezer", imageName: "weezer")
+                Album(title: "OK Computer", artist: "Radiohead", imageName: "Radiohead"),
+                Album(title: "Currents", artist: "Tame Impala", imageName: "TameImpala"),
+                Album(title: "Blue Album", artist: "Weezer", imageName: "Weezer")
             ]
         )
     ]
@@ -54,7 +75,7 @@ struct Home: View {
                             Image(systemName: "clock.arrow.circlepath")
                         }
                         .font(.subheadline)
-                        .foregroundColor(.gray)
+                        .foregroundColor(.white)
                         .padding(.horizontal, 16)
                         .padding(.vertical, 8)
                         .background(Color.white.opacity(0.1))
