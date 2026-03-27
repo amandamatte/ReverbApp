@@ -15,7 +15,7 @@ struct TabBar: View {
             }
             Tab("Profile", systemImage: "person.circle.fill") {
                 NavigationStack{
-//                    Profile()
+                    Profile()
                 }
             }
         }

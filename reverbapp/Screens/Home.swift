@@ -3,14 +3,7 @@ import SwiftUI
 struct Home: View {
     let sections: [AlbumSection] = [
         AlbumSection(
-            title: Text("Reverb ")
-                .foregroundStyle(LinearGradient(colors: [.gradientLinear1, .gradientLinear2], startPoint: .leading, endPoint: .bottom))
-                .fontWeight(.semibold)
-                .font(Font.system(size: 18))
-            + Text("recommends")
-                .fontWeight(.semibold)
-                .font(Font.system(size: 18))
-                .foregroundStyle(.white),
+            title: "Reverb recommends",
             albums: [
                 Album(title: "R.A.M", artist: "Daft Punk", imageName: "DaftPunk"),
                 Album(title: "Igor", artist: "Tyler, the Creator", imageName: "Tyler"),
@@ -18,14 +11,7 @@ struct Home: View {
             ]
         ),
         AlbumSection(
-            title: Text("Since you like ")
-                .foregroundStyle(.white)
-                .fontWeight(.semibold)
-                .font(Font.system(size: 18))
-            + Text("A$AP Rocky")
-                .foregroundStyle(LinearGradient(colors: [.gradientLinear1, .gradientLinear2], startPoint: .leading, endPoint: .bottom))
-                .fontWeight(.semibold)
-                .font(Font.system(size: 18)),
+            title: "Since you like A$AP Rocky",
             albums: [
                 Album(title: "Astroworld", artist: "Travis Scott", imageName: "Travis"),
                 Album(title: "Scorpion", artist: "Drake", imageName: "Drake"),
@@ -33,14 +19,7 @@ struct Home: View {
             ]
         ),
         AlbumSection(
-            title: Text("Since you like ")
-                .foregroundStyle(.white)
-                .fontWeight(.semibold)
-                .font(Font.system(size: 18))
-            + Text("The Strokes")
-                .foregroundStyle(LinearGradient(colors: [.gradientLinear1, .gradientLinear2], startPoint: .leading, endPoint: .bottom))
-                .fontWeight(.semibold)
-                .font(Font.system(size: 18)),
+            title: "Since you like The Strokes",
             albums: [
                 Album(title: "OK Computer", artist: "Radiohead", imageName: "Radiohead"),
                 Album(title: "Currents", artist: "Tame Impala", imageName: "TameImpala"),
@@ -51,7 +30,7 @@ struct Home: View {
     
     var body: some View {
         ZStack {
-          
+            
             LinearGradient(
                 stops: [
                     Gradient.Stop(color: Color("GradientLinear3").opacity(0.98), location: 0.0),
@@ -62,42 +41,39 @@ struct Home: View {
             )
             .ignoresSafeArea()
             
-            ScrollView(.vertical, showsIndicators: false) {
-                VStack(spacing: 30) {
-
-                    Button(action: {
-                    
-                    }) {
-                        HStack(spacing: 8) {
-                            Text("My Activity")
-                                .fontWeight(.medium)
-                            Image(systemName: "clock.arrow.circlepath")
-                        }
-                        .font(.subheadline)
-                        .foregroundColor(.white)
-                        .padding(.horizontal, 16)
-                        .padding(.vertical, 8)
-                        .background(Color.white.opacity(0.1))
-                        .clipShape(Capsule())
-                    }
-                    .padding(.top, 10)
-                    
-                 
-                    ForEach(sections) { section in
-                        SectionView(section: section)
-                    }
-                    
+            VStack(spacing: 30) {
                 
-                    Spacer().frame(height: 100)
+                Button(action: {
+                    
+                }) {
+                    HStack(spacing: 8) {
+                        Text("My Activity")
+                            .fontWeight(.medium)
+                        Image(systemName: "clock.arrow.circlepath")
+                    }
+                    .font(.subheadline)
+                    .foregroundColor(.white)
+                    .padding(.horizontal, 16)
+                    .padding(.vertical, 8)
+                    .background(Color.white.opacity(0.1))
+                    .clipShape(Capsule())
+                }
+                .padding(.top, 10)
+                
+                ScrollView(.vertical, showsIndicators: false) {
+                    
+                    ForEach(sections) { section in
+                        SectionView(title: section.title, albumSection: section)
+                    }
                 }
             }
         }
     }
-}
-
-struct Home_Previews: PreviewProvider {
-    static var previews: some View {
-        Home()
+    
+    
+    struct Home_Previews: PreviewProvider {
+        static var previews: some View {
+            Home()
+        }
     }
 }
-// fix scroll - My activity shouldn't move

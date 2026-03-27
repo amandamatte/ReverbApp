@@ -9,7 +9,17 @@ struct Album: Identifiable {
 
 struct AlbumSection: Identifiable {
     let id = UUID()
-    let title: Text
+    let title: String
     let albums: [Album]
 }
 
+struct ReviewTab: Identifiable {
+    let id = UUID()
+    let title: Text
+}
+struct ReviewStats {
+    let albumsCount: Int
+    let songsCount: Int
+    let artistsCount: Int
+    let avgRating: Double
+}
