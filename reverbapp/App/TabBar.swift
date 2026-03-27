@@ -10,7 +10,7 @@ struct TabBar: View {
             }
             Tab("Library", systemImage: "music.pages.fill") {
                 NavigationStack{
-//                    Library()
+                    Library()
                 }
             }
             Tab("Profile", systemImage: "person.circle.fill") {
