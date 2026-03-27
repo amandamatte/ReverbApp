@@ -12,7 +12,6 @@ struct AlbumItem: View {
     
     var body: some View {
         VStack(alignment: .center, spacing: 8) {
-            // Capa do Álbum
             GeometryReader { geometry in
                 if UIImage(named: album.imageName) != nil {
                     Image(album.imageName)
@@ -31,7 +30,6 @@ struct AlbumItem: View {
             .frame(width: 140, height: 140)
             .clipShape(RoundedRectangle(cornerRadius: 12))
             
-            // Textos
             VStack(spacing: 4) {
                 Text(album.title)
                     .font(.subheadline)
