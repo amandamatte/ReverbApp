@@ -68,7 +68,6 @@ struct LoginPage: View {
                     }
                     .padding(.horizontal, 20)
                 }
-                
             }
         }
     }

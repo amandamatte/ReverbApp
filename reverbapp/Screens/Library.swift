@@ -32,8 +32,8 @@ struct Library: View {
                         .fontWeight(.bold)
                         .disabled(true)
                 }
-                .padding(.horizontal, 16)
-                .padding(.vertical, 10)
+                .padding(.horizontal, 10)
+                .padding(.vertical, 8)
                 .background(.white.opacity(0.2))
                 .clipShape(Capsule())
                 .padding(.horizontal)
