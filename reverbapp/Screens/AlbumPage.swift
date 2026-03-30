@@ -65,7 +65,7 @@ struct AlbumPage: View {
                     }
                         .foregroundColor(.white)
                         .fontWeight(.bold)
-                        .frame(maxWidth: .infinity)
+                        .padding(.horizontal, 130)
                         .padding(.vertical, 16)
                         .background(
                             LinearGradient(colors: [.gradientLinear1, .gradientLinear2], startPoint: .leading, endPoint: .bottom), in: Capsule()

@@ -18,7 +18,7 @@ struct ArtistComponent: View {
             Text(name)
                 .foregroundStyle(selectedArtists ? .gradientLinear2 : .white)
                 .fontWeight(.medium)
-                .font(Font.system(size: 9.17))
+                .font(Font.system(size: 10))
         }
     }
 }
