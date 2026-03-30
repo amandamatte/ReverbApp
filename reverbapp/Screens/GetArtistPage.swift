@@ -124,8 +124,7 @@ struct GetArtistPage: View {
                         NavigationLink(destination: TabBar().navigationBarBackButtonHidden(true)) {
                             ButtonComponent(title: "Next")
                         }
-                        
-                        // Substituí o Button por um NavigationLink aqui
+
                         NavigationLink(destination: TabBar().navigationBarBackButtonHidden(true)) {
                             Text("Skip")
                                 .foregroundColor(Color(red: 0.95, green: 0.6, blue: 0.4))
