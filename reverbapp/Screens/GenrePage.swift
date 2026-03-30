@@ -102,12 +102,7 @@ struct GenrePage: View {
 
                     VStack(spacing: 16) {
                         NavigationLink(destination: GetArtistPage()) {
-                            Text("Next")
-                                .foregroundColor(.white)
-                                .frame(maxWidth: .infinity)
-                                .padding(.vertical, 16)
-                                .background(
-                                    LinearGradient(colors: [.gradientLinear1, .gradientLinear2], startPoint: .leading, endPoint: .bottom), in: .capsule)
+                            ButtonComponent(title: "Next")
                                 .opacity(selectedGenres.count < 5 ? 0.5 : 1.0)
                         }
                         .disabled(selectedGenres.count < 5)

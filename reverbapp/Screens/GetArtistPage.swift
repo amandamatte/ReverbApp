@@ -122,13 +122,7 @@ struct GetArtistPage: View {
                     VStack(spacing: 16) {
                         
                         NavigationLink(destination: TabBar().navigationBarBackButtonHidden(true)) {
-                            Text("Next")
-                                .foregroundColor(.white)
-                                .frame(maxWidth: .infinity)
-                                .padding(.vertical, 16)
-                                .background(
-                                    LinearGradient(colors: [.gradientLinear1, .gradientLinear2], startPoint: .leading, endPoint: .bottom), in: Capsule()
-                                )
+                            ButtonComponent(title: "Next")
                         }
                         
                         // Substituí o Button por um NavigationLink aqui
