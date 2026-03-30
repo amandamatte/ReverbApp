@@ -60,7 +60,7 @@ struct Profile: View {
                         .font(Font.system(size: 13))
                         .foregroundStyle(LinearGradient(colors: [.gradientLinear1, .gradientLinear2], startPoint: .leading, endPoint: .bottom))
                                         
-                    Text("On Reverb since 26/03/2026")
+                    Text("On Reverb since 01/04/2026")
                         .fontWeight(.medium)
                         .font(Font.system(size: 12))
                         .foregroundColor(.white.opacity(0.5))
