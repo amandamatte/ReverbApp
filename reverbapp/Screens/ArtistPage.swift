@@ -8,11 +8,13 @@
 import SwiftUI
 
 struct ArtistPage: View {
+    @State var nextView = false
+    
     let favoriteAlbumSection: AlbumSection =
         AlbumSection(
             title: "Albums",
             albums: [
-                Album(title: "Definetely Maybe", artist: "1994", imageName: "Album1"),
+                Album(title: "Definitely Maybe", artist: "1994", imageName: "Album1"),
                 Album(title: "(What's The Story) Morning Glory?", artist: "1995",  imageName: "Album2"),
                 Album(title: "Standing on the Shoulder of Giants", artist: "2000", imageName: "Album3")
             ]
@@ -80,7 +82,12 @@ struct ArtistPage: View {
                             ArtistSong(title: "Married with Children", subtitle: "Definitely Maybe", value: "4.6", isRating: true)
                             
                             ScrollView(.vertical, showsIndicators: false) {
-                                SectionView(title: "Albums", albumSection: favoriteAlbumSection)
+                                Button {
+                                    nextView = true
+                                } label: {
+                                    SectionView(title: "Albums", albumSection: favoriteAlbumSection)
+                                }
+                                
                                 }
                             }
                         }
@@ -96,6 +103,9 @@ struct ArtistPage: View {
                     ))
                 .offset(y: -70)
                 
+            }
+        .navigationDestination(isPresented: $nextView) {
+            AlbumPage()
             }
         }
     }

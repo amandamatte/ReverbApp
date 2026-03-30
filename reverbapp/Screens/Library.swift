@@ -10,6 +10,7 @@ import SwiftUI
 struct Library: View {
     
     @State private var searchText = ""
+    @State var nextView: Bool = false
     
     var body: some View {
         ZStack {
@@ -58,7 +59,7 @@ struct Library: View {
                     }
                     .padding()
                     VStack(spacing: 20){
-                        SearchItem(albumImage: .oasis, title: "Oasis", subtitle: "Artist", value: "4.6", isRating: true)
+                        SearchItem(albumImage: .oasis, title: "Oasis", subtitle: "Artist", value: "4.6", isRating: true, tapAction: {nextView = true})
                         SearchItem(albumImage: .savage, title: "I am > I was", subtitle: "Album", value: "4.6", isRating: true)
                         SearchItem(albumImage: .profile, title: "Joji", subtitle: "Artist", value: "4.6", isRating: true)
                         SearchItem(albumImage: .tyler, title: "Igor", subtitle: "Album", value: "4.6", isRating: true)
@@ -68,6 +69,9 @@ struct Library: View {
                     }
                 }
             }
+        }
+        .navigationDestination(isPresented: $nextView){
+            ArtistPage()
         }
     }
 }

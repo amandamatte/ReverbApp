@@ -123,8 +123,10 @@ struct GetArtistPage: View {
                         
                         NavigationLink(destination: TabBar().navigationBarBackButtonHidden(true)) {
                             ButtonComponent(title: "Next")
+                                .opacity(selectedArtists.count < 5 ? 0.5 : 1.0)
                         }
-
+                        .disabled(selectedArtists.count < 5)
+                        
                         NavigationLink(destination: TabBar().navigationBarBackButtonHidden(true)) {
                             Text("Skip")
                                 .foregroundColor(Color(red: 0.95, green: 0.6, blue: 0.4))

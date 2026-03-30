@@ -13,6 +13,7 @@ struct SearchItem: View {
     var subtitle: String
     var value: String
     var isRating: Bool = false
+    var tapAction: (() -> Void)? = nil
     
     var body: some View {
         HStack{
@@ -43,10 +44,11 @@ struct SearchItem: View {
                 }
             }
         .padding(.horizontal)
+        .onTapGesture {
+            self.tapAction?()
+        }
         }
     }
 
 
-#Preview {
-    SearchItem(albumImage: .kings, title: "Oasis", subtitle: "Artist", value: "4.6", isRating: true)
-}
+

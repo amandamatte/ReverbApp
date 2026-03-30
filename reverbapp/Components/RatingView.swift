@@ -15,10 +15,17 @@ struct RatingView: View {
     var offImage: Image?
     var onImage = Image(systemName: "star.fill")
     var offColor = Color.gray
-    var onColor = Color.yellow
+    var onColor = Color.orange
     
     var body: some View {
-        HStack {
+        HStack{
+            Text("Rate")
+                .foregroundColor(.white)
+                .font(.system(size: 14))
+                .fontWeight(.medium)
+            
+            Spacer()
+            
             ForEach(1..<maximumRating + 1, id: \.self) { index in
                 image(for: index)
                     .foregroundColor(index > rating ? offColor : onColor)
@@ -29,6 +36,7 @@ struct RatingView: View {
                 }
             }
         }
+        .padding(.horizontal)
     }
     func image(for index: Int) -> Image {
         if index > rating {
@@ -39,10 +47,9 @@ struct RatingView: View {
     }
 }
 
-// Preview provider for testing
 struct RatingView_Previews: PreviewProvider {
     static var previews: some View {
 
-        RatingView(rating: .constant(3))
+        RatingView(rating: .constant(4))
     }
 }
