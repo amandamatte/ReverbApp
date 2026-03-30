@@ -23,24 +23,22 @@ struct ArtistPage: View {
             ZStack {
                 Image(.oasis)
                     .resizable()
-                    .frame(width: 400, height: 400)
+                    .frame(maxWidth: .infinity)
+                    .frame(height: 420)
+                    .overlay {
+                        Rectangle()
+                            .foregroundStyle(.black)
+                            .opacity(0.3)
+                    }
                     .ignoresSafeArea()
-                VStack(spacing: -30){
-                    Spacer()
+                
+                VStack {
                     HStack{
                     Text("Oasis")
                         .foregroundStyle(.white)
                         .fontWeight(.bold)
                         .font(Font.system(size: 46))
                         .frame(maxWidth: .infinity, alignment: .leading)
-                        .padding()
-                    
-                    Text("4.000 reviews")
-                        .foregroundStyle(.gray)
-                        .fontWeight(.bold)
-                        .font(Font.system(size: 12))
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                        .padding()
                         
                     Text("4.6")
                         .font(.system(size: 24, weight: .bold))
@@ -50,20 +48,30 @@ struct ArtistPage: View {
                         .foregroundStyle(LinearGradient(colors: [.gradientLinear1, .gradientLinear2], startPoint: .leading, endPoint: .bottom))
                         .font(.system(size: 24))
                     }
+                    
+                    Text("4.000 reviews")
+                        .foregroundStyle(.white)
+                        .fontWeight(.bold)
+                        .font(Font.system(size: 12))
+                        .frame(maxWidth: .infinity, alignment: .leading)
                 }
+                .padding(.top, 150)
+                .padding(.horizontal, 18)
             }
             
             Rectangle()
                 .clipShape(UnevenRoundedRectangle(cornerRadii: .init(topLeading: 30, bottomLeading: 0, bottomTrailing: 0, topTrailing: 30)))
-                .offset(y: -70)
+                
+//                .padding(.bottom, 60)
                 .frame(height: 600)
                 .overlay {
                     ScrollView(.vertical) {
-                        VStack(spacing:20) {
+                        VStack(alignment: .leading, spacing: 20) {
                             Text("Best rated songs")
                                 .foregroundStyle(.white.opacity(0.75))
                                 .fontWeight(.bold)
                                 .font(Font.system(size: 18))
+                                .padding(.leading, 16)
                             
                             ArtistSong(title: "Wonderwall / Remastered", subtitle: "(What's the Story) Morning Glory?", value: "4.6", isRating: true)
                             ArtistSong(title: "Don't Look Back in Anger / Remastered", subtitle: "(What's the Story) Morning Glory?", value: "4.6", isRating: true)
@@ -76,8 +84,9 @@ struct ArtistPage: View {
                                 }
                             }
                         }
+                    .padding(.top, 28)
                     }
-                    .foregroundStyle(LinearGradient(
+                .foregroundStyle(LinearGradient(
                         stops: [
                             Gradient.Stop(color: Color("GradientLinear3").opacity(0.98), location: 0.0),
                             Gradient.Stop(color: Color("GradientLinear4"), location: 0.56)
@@ -85,6 +94,7 @@ struct ArtistPage: View {
                         startPoint: .top,
                         endPoint: .bottom
                     ))
+                .offset(y: -70)
                 
             }
         }
