@@ -53,7 +53,20 @@ struct AlbumPage: View {
                 Button {
                     isReviewSheet = true
                 } label: {
-                    ButtonComponent(title: "Add review")
+                    HStack{
+                        Image(systemName: "star.circle.fill")
+                        Text("Add review")
+                    }
+                        .foregroundColor(.white)
+                        .fontWeight(.bold)
+                        .frame(maxWidth: .infinity)
+                        .padding(.vertical, 16)
+                        .background(
+                            LinearGradient(colors: [.gradientLinear1, .gradientLinear2], startPoint: .leading, endPoint: .bottom), in: Capsule()
+                        )
+                }
+                ScrollView{
+                    HeaderView(title: "About")
                 }
             }
             .padding(.top, 150)

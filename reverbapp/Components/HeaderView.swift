@@ -13,6 +13,7 @@ struct HeaderView: View {
     var body: some View {
         HStack {
             Text(title)
+                .fontWeight(.bold)
                 .font(.system(size: 18, weight: .semibold))
                 .foregroundColor(.white.opacity(0.75))
             Spacer()
