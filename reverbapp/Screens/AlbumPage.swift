@@ -91,6 +91,7 @@ struct AlbumPage: View {
             .sheet(isPresented: $isReviewSheet) {
                 ReviewSheet()
                     .presentationDetents([.medium])
+                    .background(Color.black)
             }
             Spacer()
         }
