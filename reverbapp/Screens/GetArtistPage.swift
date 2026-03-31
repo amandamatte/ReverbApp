@@ -145,6 +145,8 @@ struct GetArtistPage: View {
                 }
             }
         }
+        .toolbar(.hidden, for: .navigationBar)
+
     }
 }
 
