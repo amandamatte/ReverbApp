@@ -12,9 +12,7 @@ struct RatingView: View {
     @Binding var rating: Int
     
     var maximumRating = 5
-    var offImage: Image?
-    var onImage = Image(systemName: "star.fill")
-    var offColor = Color.gray
+    var offColor = Color.gray.opacity(0.3)
     var onColor = Color.orange
     
     var body: some View {
@@ -27,7 +25,7 @@ struct RatingView: View {
             Spacer()
             
             ForEach(1..<maximumRating + 1, id: \.self) { index in
-                image(for: index)
+                Image(systemName: "star.fill")
                     .foregroundColor(index > rating ? offColor : onColor)
                     .onTapGesture {
                         withAnimation(.easeInOut) {
@@ -38,18 +36,11 @@ struct RatingView: View {
         }
         .padding(.horizontal)
     }
-    func image(for index: Int) -> Image {
-        if index > rating {
-            return offImage ?? onImage
-        } else {
-            return onImage
-        }
-    }
 }
 
 struct RatingView_Previews: PreviewProvider {
     static var previews: some View {
 
-        RatingView(rating: .constant(4))
+        RatingView(rating: .constant(2))
     }
 }

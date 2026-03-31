@@ -11,16 +11,18 @@ struct Toast {
     private(set) var id: String = UUID().uuidString
     var symbol: String
     var symbolFont: Font
-    var symbolForegroundStyle: (LinearGradient)
+    var symbolForegroundStyle: (Color, Color)
     
     var title: String
+    var message: String
     
-    static var example: Toast {
+    static var example1: Toast {
         Toast(
         symbol: "checkmark.circle.fill",
         symbolFont: .system(size: 30),
-        symbolForegroundStyle: (LinearGradient(colors: [.gradientLinear1, .gradientLinear2], startPoint: .leading, endPoint: .bottom)),
-        title: "Published Review!"
+        symbolForegroundStyle: (.white, .green),
+        title: "Published Review!",
+        message: "Your review was just published!"
         )
     }
 }

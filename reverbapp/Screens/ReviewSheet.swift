@@ -10,6 +10,7 @@ import SwiftUI
 struct ReviewSheet: View {
     
     @State var description: String = ""
+    @State var currentRating: Int = 0
     
     var body: some View {
         ZStack{
@@ -46,7 +47,7 @@ struct ReviewSheet: View {
                 Divider()
                     .background(.gray)
                 
-                RatingView(rating: .constant(4))
+                RatingView(rating: $currentRating)
                 
                 Text("Publish a comment")
                     .font(.system(.subheadline, weight: .medium))
@@ -54,7 +55,8 @@ struct ReviewSheet: View {
                     .foregroundStyle(.white)
                     .font(.system(size: 14))
                 
-                TextField("", text: $description, prompt: Text("What's on your mind?").foregroundColor(.white), axis: .vertical)
+                TextField("", text: $description, prompt: Text("What's on your mind?")
+                    .foregroundColor(.white), axis: .vertical)
                     .lineLimit(5...)
                     .padding(.vertical, 12)
                     .padding(.horizontal)

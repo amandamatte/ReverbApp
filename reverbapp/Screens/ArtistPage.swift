@@ -86,8 +86,7 @@ struct ArtistPage: View {
                                     nextView = true
                                 } label: {
                                     SectionView(title: "Albums", albumSection: favoriteAlbumSection)
-                                }
-                                
+                                    }
                                 }
                             }
                         }
