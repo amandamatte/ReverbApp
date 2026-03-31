@@ -20,7 +20,7 @@ struct Toast {
         Toast(
         symbol: "checkmark.circle.fill",
         symbolFont: .system(size: 30),
-        symbolForegroundStyle: (.white, .green),
+        symbolForegroundStyle: (.white, .orange),
         title: "Published Review!",
         message: "Your review was just published!"
         )

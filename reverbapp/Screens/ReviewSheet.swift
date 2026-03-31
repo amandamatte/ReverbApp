@@ -11,6 +11,7 @@ struct ReviewSheet: View {
     
     @State var description: String = ""
     @State var currentRating: Int = 0
+    @State private var showToast: Bool = false
     
     var body: some View {
         ZStack{
@@ -66,8 +67,21 @@ struct ReviewSheet: View {
                         RoundedRectangle(cornerRadius: 26)
                             .foregroundStyle(.gray.opacity(0.3))
                     )
-                ButtonComponent(title: "Publish")
-                    .padding(.top, 30)
+                Button {
+                    showToast.toggle()
+                } label: {
+                        Text("Publish")
+                        .foregroundColor(.white)
+                        .fontWeight(.semibold)
+                        .frame(maxWidth: .infinity)
+                        .padding(.vertical, 16)
+                        .background(
+                            LinearGradient(colors: [.gradientLinear1, .gradientLinear2], startPoint: .leading, endPoint: .bottom), in: Capsule()
+                        )
+            }
+            .padding(.bottom, 10)
+            .dynamicIslandToast(isPresented: $showToast, value: .example1)
+
                 }
             }
             .padding(.horizontal)
