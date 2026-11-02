@@ -19,7 +19,7 @@ Reverb is a music discovery app where you can rate albums, discover new artists,
 
 ### 📸 Sneak Peek
 
-<img src="./demo.gif" width="250" alt="Reverb App Demo">
+<img width="300" height="652" alt="demo" src="https://github.com/user-attachments/assets/4539d24b-4481-4079-9996-4ce937d36733" />
 
 ### 🌱 Let's Get Started
 
